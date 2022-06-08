@@ -8,7 +8,11 @@ export default  class Section extends Component{
       count: 0,
       isVisible: true
       /*this.inc = this.inc.bind(this)*/
+
     }
+
+
+
   }
   show =() => {
     this.setState((prevState)=>{
@@ -17,7 +21,7 @@ export default  class Section extends Component{
   }
 
 
-/*
+
   inc = () =>{
     this.setState({count: this.state.count + 1})
 
@@ -34,16 +38,31 @@ export default  class Section extends Component{
       }
     })
   }
-*/
 
+ 
 
   render(){
+    console.log('render')
     return(
       <section className='section-body'>
-         <p>{this.state.isVisible && <Confetti/>}</p>
-         <div><button onClick={this.show} className='btn'>+</button>  /*this.inc */
+         <p>1</p>
+         <div><button onClick={this.inc} className='btn'>+</button> 
        <button onClick={this.dec} className='btn'>-</button></div>
      </section>
     )
   }
+
+componentDidMount(){
+  setInterval(()=> {
+    console.log('componentDidMount')
+  },2000) 
+
+}
+componentWillUnmount(){
+  clearInterval()
+}
+
+componentDidUpdate(){
+  console.log('componentDidUpdate')
+}
 }
