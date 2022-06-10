@@ -1,0 +1,9 @@
+.form{
+    font-size: 20px;
+    color: green;
+    margin-bottom: 400px;
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    
+}
